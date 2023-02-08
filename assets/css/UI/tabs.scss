@@ -1,0 +1,43 @@
+.tabs {
+  position: relative;
+
+  width: 100%;
+
+  .tabs__header {
+    display: flex;
+
+    .tabs__header__item {
+      display: flex;
+      flex-direction: column;
+
+      padding: 16px 20px;
+
+      background-color: rgba($color: $_color-main-black-default, $alpha: .7);
+
+      cursor: pointer;
+
+      &.tabs__header__item-active {
+        background-color: $_color-main-black-default;
+      }
+
+      .tabs__header__item__name {
+        font-weight: 700;
+        font-size: 20px;
+        color: $_color-main-beige-default;
+      }
+      .tabs__header__item__filename {
+        color:$_color-main-gray-light
+      }
+    }
+  }
+
+  .tabs__item {
+    display: none;
+
+    width: 100%;
+
+    &.tabs__item-active {
+      display: block;
+    }
+  }
+}

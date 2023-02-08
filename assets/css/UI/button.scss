@@ -1,0 +1,29 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+
+  background-color: $_color-main-black-default;
+  color:$_color-main-beige-default;
+
+  padding: 10px 20px;
+
+  border: 1px solid $_color-main-gray-light;
+  border-radius: 5px;
+
+  transition: background-color .5s;
+
+  .feather {
+    width: 20px;
+  }
+
+  .button__text {
+    margin: 0 0 0 8px;
+
+    font-weight: 500;
+    font-size: 18px;
+  }
+
+  &:hover {
+    background-color: $_color-main-green-default;
+  }
+}

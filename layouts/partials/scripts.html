@@ -1,0 +1,17 @@
+{{ $sass := resources.Get "css/global.scss" }}
+{{ $style := $sass | resources.ToCSS (dict "outputStyle" "compressed") }}
+<link rel="stylesheet" type="text/css" href="{{$style.Permalink}}">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/js/highlight/styles/default.min.css">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/agate.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/languages/go.min.js"></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+{{ $js := resources.Get "js/main.js" }}
+{{ $script := $js }}
+<script defer src="{{ $script.Permalink }}"></script>

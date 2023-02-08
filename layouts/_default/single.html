@@ -1,0 +1,19 @@
+{{ define "main" }}
+<div class="page">
+  <div class="page__section">
+    <h1 class="page__title">{{ .Title }} </h1>
+  </div>
+  <div class="page__section page__section-title">
+    {{ $dateTime := .PublishDate.Format "2006-01-02" }}
+    {{ $dateFormat := .Site.Params.dateFormat | default "Jan 2, 2006" }}
+    <time class="page__date" datetime="{{ $dateTime }}">{{ .PublishDate.Format $dateFormat }}</time>
+    by
+    {{ range .Param "authors" }}
+		  {{ . }}
+	  {{ end }}
+  </div>
+  <div class="page__section page__section-content">
+    {{ .Content }}
+  </div>
+</div>
+{{ end }}

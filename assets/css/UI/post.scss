@@ -1,0 +1,27 @@
+.post {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+
+  .post__section {
+    padding: 0 20px 0 0;
+    
+    &.post__section-summary {
+      width: 100%;
+
+      padding: 10px 0;
+    }
+  }
+
+  .post__date {
+    color:$_color-main-green-default
+  }
+
+  .post__title {
+    color:$_color-main-black-default;
+  }
+
+  .post__summary {
+    color:$_color-main-black-default;
+  }
+}

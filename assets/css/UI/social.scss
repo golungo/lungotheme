@@ -1,0 +1,40 @@
+.social {
+  display: flex;
+  align-items: center;
+
+  .social__item {
+    padding: 0 7.5px;
+
+    cursor: pointer;
+
+    transition: color .5s;
+
+    color:$_color-main-gray-default;
+
+    &.social__item-discord {
+      width: 32px;
+
+      &:hover {
+        color: #7289da;
+      }
+    }
+
+    &.social__item-twitter {
+      &:hover {
+        color: #1DA1F2
+      }
+    }
+
+    &.social__item-telegram {
+      &:hover {
+        color: #229ED9
+      }
+    }
+
+    &.social__item-github {
+      &:hover {
+        color: #171515
+      }
+    }
+  }
+}

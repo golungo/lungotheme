@@ -1,0 +1,35 @@
+<pre><code class="language-go">
+package handlers
+    
+import (
+  "encoding/json"
+    
+  "golungo/example/models"
+    
+  "github.com/golungo/lungo/types"
+  "github.com/golungo/lungo"
+)
+          
+func Search(objectID types.ObjectID) ([]models.Parent, error) {
+  var Parents []models.Parent
+    
+  filter := types.filter{
+    "_id": objectID
+  }
+    
+  populate := types.Populate{
+    "childs"
+  }
+            
+  result, err := models.GetCollection().Match(filter).Populate(populate).Limit(limit).Exec()
+  if err != nil {
+    return Parents, err
+  }
+            
+  if err := json.Unmarshal(result, &Parents); err != nil {
+    return Parents, err
+  }
+            
+  return Parents, nil
+}
+</code></pre>

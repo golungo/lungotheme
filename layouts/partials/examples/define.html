@@ -1,0 +1,33 @@
+<pre><code class="language-go">
+package models
+    
+import (
+  "reflect"
+      
+  "github.com/golungo/lungo"
+  "github.com/golungo/lungo/query"
+  "github.com/golungo/lungo/types"
+)
+    
+type Child struct {
+  ID          types.ObjectID `json:"_id" bson:"_id"`
+  Title       string         `json:"title" bson:"title"`
+}
+    
+type Parent struct {
+  query.Model `json:"-" bson:"-"`
+  ID          types.ObjectID `json:"_id" bson:"_id"`
+  ChildID     types.ObjectID `json:"childId" bson:"childId"`
+  Child       []Child        `json:"child" bson:"-"`
+}
+    
+func GetCollection() query.Model {
+  var model Parent
+     
+  return model.Init(
+    "parents", reflect.TypeOf(model),
+  ).Virtual(
+    "childs", "childId", "_id", "child", false,
+  )
+}        
+</code></pre>

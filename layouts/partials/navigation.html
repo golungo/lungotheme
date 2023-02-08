@@ -1,0 +1,10 @@
+<nav class="navigation">
+{{ range .Site.Menus.main }}
+  <a class="navigation__item" href="{{ .URL }}" title="{{ .Title }}">
+  {{ if .Pre }}
+    <i data-feather="{{- .Pre -}}"></i>
+  {{ end }}
+    {{- .Name -}}
+  </a>  
+{{ end }}
+</nav>

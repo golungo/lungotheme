@@ -1,0 +1,24 @@
+.page {
+  display: flex;
+  flex-direction: column;
+
+  @include container;
+
+  .page__section {
+    &.page__section-default {
+      padding: 0 0 20px 0;
+    }
+    &.page__section-title{
+      padding: 0 0 60px 0;
+    }
+  }
+
+  .page__title {
+    font-size: 60px;
+    color:$_color-main-black-default;
+  }
+
+  .page__date {
+    color:$_color-main-green-default
+  }
+}

@@ -1,0 +1,12 @@
+.navigation {
+  display: flex;
+
+  .navigation__item {
+    color:$_color-main-black-default;
+
+    font-size: 18px;
+    font-weight: 500;
+
+    padding: 0 0 0 20px;
+  }
+}

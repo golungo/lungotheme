@@ -1,0 +1,80 @@
+.welcome {
+  @include container;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 0 0 120px 0;
+
+  .welcome__section {
+    margin: 0 0 30px 0;
+
+    position: relative;
+
+    &.welcome__section-install {
+      background-color: $_color-main-black-default;
+      color:$_color-main-gray-light;
+  
+      padding: 10px 50px 10px 20px;
+  
+      border-radius: 5px;
+    }
+  }
+
+  .welcome__title {
+    font-size: 60px;
+    font-weight: 700;
+
+    text-align: center;
+    color:$_color-main-green-default
+  }
+
+  .welcome__copy {
+    position: absolute;
+    right: 15px;
+    top:0;
+
+    width: 25px;
+    height: 100%;
+
+    
+    color:$_color-main-gray-default;
+
+    transition: color .5s;
+
+    &:hover {
+      color:$_color-main-beige-default;
+    }
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .welcome__description {
+    font-size: 30px;
+    font-weight: 500;
+
+    text-align: center;
+    color:$_color-main-black-default;
+
+    .welcome__description__color {
+      color:$_color-main-green-default;
+    }
+  }
+
+  .welcome__install {
+    font-size: 20px;
+
+    &::before {
+      content: "$";
+
+      padding: 0 5px 0 0;
+    }
+  }
+}

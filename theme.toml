@@ -1,0 +1,15 @@
+# theme.toml template for a Hugo theme
+# See https://github.com/gohugoio/hugoThemes#themetoml for an example
+
+name = "lungotheme"
+license = "MIT"
+licenselink = "https://github.com/golungo/lungotheme/blob/master/LICENSE"
+description = ""
+homepage = "https://lungo.dev/"
+tags = []
+features = []
+min_version = "0.41.0"
+
+[author]
+  name = "Michael Knyazev"
+  homepage = "https://michaelknyazev.com"

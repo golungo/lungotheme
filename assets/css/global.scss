@@ -1,0 +1,47 @@
+@import "./config/colors.scss";
+@import "./config/mixins.scss";
+
+* {
+  margin:0;
+  padding:0;
+
+  border:0;
+  outline:0;
+}
+
+html,
+body {
+  font-size: 14.4px;
+  font-weight: 400;
+  font-family: 'Inconsolata', monospace;
+
+  background-color: $_color-main-beige-default;
+}
+
+a {
+  text-decoration: none;
+
+  color: $_color-main-green-default;
+}
+
+pre {
+  white-space: pre
+}
+
+.container {
+  @include container;
+}
+
+@import "./UI/tabs.scss";
+@import "./UI/button.scss";
+@import "./UI/social.scss";
+@import "./UI//post.scss";
+
+@import "./partials/logo.scss";
+@import "./partials/header.scss";
+@import "./partials/navigation.scss";
+@import "./partials/welcome.scss";
+@import "./partials/example.scss";
+@import "./partials/footer.scss";
+
+@import "./page.scss";
