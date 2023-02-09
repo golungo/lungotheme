@@ -6,18 +6,17 @@ import (
       
   "github.com/golungo/lungo"
   "github.com/golungo/lungo/query"
-  "github.com/golungo/lungo/types"
 )
     
 type Child struct {
-  ID          types.ObjectID `json:"_id" bson:"_id"`
+  ID          lungo.ObjectID `json:"_id" bson:"_id"`
   Title       string         `json:"title" bson:"title"`
 }
     
 type Parent struct {
   query.Model `json:"-" bson:"-"`
-  ID          types.ObjectID `json:"_id" bson:"_id"`
-  ChildID     types.ObjectID `json:"childId" bson:"childId"`
+  ID          lungo.ObjectID `json:"_id" bson:"_id"`
+  ChildID     lungo.ObjectID `json:"childId" bson:"childId"`
   Child       []Child        `json:"child" bson:"-"`
 }
     

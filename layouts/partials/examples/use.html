@@ -6,18 +6,17 @@ import (
     
   "golungo/example/models"
     
-  "github.com/golungo/lungo/types"
   "github.com/golungo/lungo"
 )
           
-func Search(objectID types.ObjectID) ([]models.Parent, error) {
+func Search(objectID lungo.ObjectID) ([]models.Parent, error) {
   var Parents []models.Parent
     
-  filter := types.filter{
+  filter := lungo.filter{
     "_id": objectID
   }
     
-  populate := types.Populate{
+  populate := lungo.Populate{
     "childs"
   }
             
