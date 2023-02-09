@@ -14,4 +14,13 @@
 {{ $js := resources.Get "js/main.js" }}
 {{ $script := $js }}
 <script defer src="{{ $script.Permalink }}"></script>
-{{ template "_internal/google_analytics.html" . }}
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id={{site.Config.Services.GoogleAnalytics.ID}}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', '{{site.Config.Services.GoogleAnalytics.ID}}');
+</script>
