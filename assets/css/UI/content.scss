@@ -1,0 +1,37 @@
+.content {
+  p,
+  li,
+  ul {
+    display: block;
+  }
+
+  ul {
+    padding:0 0 10px 0;
+  }
+
+  li {
+    display: flex;
+    align-items: center;
+    &::before {
+      display: block;
+      content: "•";
+
+      padding: 0 5px 0 0;
+    }
+  }
+  h3,
+  h4,
+  h5,
+  h6
+  ul,
+  pre,
+  p {
+    padding:0 0 10px 0;
+  }
+
+  h2 {
+    display: block;
+
+    padding: 40px 0 20px 0;
+  }
+}
