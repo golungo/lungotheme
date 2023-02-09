@@ -17,7 +17,11 @@ function __Tabs(element) {
 
   if (!_headerItems.length) return;
 
-  const [$active, $setActive] = useState(_headerItems[0].dataset.tab);
+  const defaultTab = _headerItems[0];
+  const defaultTabId = defaultTab.dataset.tab;
+  const [$active, $setActive] = useState(defaultTabId);
+
+  defaultTab.classList.add("tabs__header__item-active");
 
   for (let i = 0; i < _headerItems.length; i++) {
     const item = _headerItems[i];
@@ -53,12 +57,24 @@ function __Tabs(element) {
     }
 
     item.addEventListener("click", setActiveTab, true);
+    const _tabs = element.querySelectorAll("[data-tabs-itemId]");
+    if (_tabs.length) {
+      for(let i = 0; i < _tabs.length; i++) {
+        const _current = _tabs[i];
+        const itemId = _current.dataset.tabsItemid
+
+        if (itemId === defaultTabId) {
+          _current.classList.add("tabs__item-active");
+        } else {
+          _current.classList.remove("tabs__item-active");
+        }
+      }
+    }
   }
 }
 
 (() => {
   feather.replace()
-  hljs.highlightAll()
 
   const _tabs = document.querySelectorAll("[data-tabs]");
 

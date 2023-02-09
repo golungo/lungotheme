@@ -1,0 +1,11 @@
+{{ $id := .Get 0 }}
+{{ $title := .Get 1 }}
+{{ $subTitle := .Get 2 }}
+<div class="tabs__header__item" data-tab="{{ $id }}">
+  <div class="tabs__header__item__name">
+    {{ $title }}
+  </div>
+  <div class="tabs__header__item__filename">
+    {{ $subTitle }}
+  </div>
+</div>
