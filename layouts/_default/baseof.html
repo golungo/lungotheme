@@ -28,6 +28,30 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
+    {{ $sass := resources.Get "css/global.scss" }}
+    {{ $style := $sass | resources.ToCSS (dict "outputStyle" "compressed") }}
+    <link rel="stylesheet" type="text/css" href="{{$style.Permalink}}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;500;700;900&display=swap"
+        rel="stylesheet">
+
+    <script defer src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    {{ $js := resources.Get "js/main.js" }}
+    {{ $script := $js }}
+    <script defer src="{{ $script.Permalink }}"></script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async
+        src="https://www.googletagmanager.com/gtag/js?id={{site.Config.Services.GoogleAnalytics.ID}}"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', '{{site.Config.Services.GoogleAnalytics.ID}}');
+    </script>
     {{ partial "scripts.html" }}
 </head>
 
