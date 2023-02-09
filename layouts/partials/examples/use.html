@@ -20,7 +20,7 @@ func Search(objectID lungo.ObjectID) ([]models.Parent, error) {
     "childs"
   }
             
-  result, err := models.GetCollection().Match(filter).Populate(populate).Limit(limit).Exec()
+  result, err := models.GetCollection().Match(filter).Lookup(populate).Limit(limit).Exec()
   if err != nil {
     return Parents, err
   }
